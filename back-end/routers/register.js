@@ -1,9 +1,9 @@
-import express from "express";
-import { register } from "../controllers/register";
+const express = require("express") ;
+const { register } =require ("../controllers/register.js");
 
 const registerRouter = express.Router();
 
 registerRouter.post("/", register);
 
-module.exports = { registerRouter };
+module.exports = registerRouter ;
 
