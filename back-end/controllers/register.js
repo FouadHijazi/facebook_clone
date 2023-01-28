@@ -1,6 +1,6 @@
 const connection = require("../models/db");
 const bcrypt = require("bcrypt");
-const salt =5;
+
 const register = async (req, res) => {
   const {
     firstName,
@@ -12,7 +12,7 @@ const register = async (req, res) => {
     coverImage,
   } = req.body;
 
-  const encryptedPassword = await bcrypt.hash(password, salt);
+  const encryptedPassword = await bcrypt.hash(password, 5);
   console.log(encryptedPassword);
 
   const query = `INSERT INTO users (firstName,
